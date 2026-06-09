@@ -134,6 +134,7 @@ Tools/unicode/data/
 /builddir/
 /build-musl-static/
 /build-minimal-static-test/
+/build-jit/
 /compile_commands.json
 /config.cache
 /config.log
