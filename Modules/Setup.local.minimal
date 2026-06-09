@@ -1,0 +1,28 @@
+# Minimal static build module overrides (musl).
+# Copied to Modules/Setup.local by Tools/build/build-minimal-musl.sh.
+#
+# Setup.stdlib.minimal.in already lists only kept modules; this file
+# disables anything configure might still try to add.
+
+*disabled*
+
+# GPL-linked
+readline
+_gdbm
+_dbm
+
+# Not in minimal Setup.stdlib — belt-and-suspenders
+_tkinter _curses _curses_panel _ssl _hashlib _sqlite3 _ctypes
+pyexpat _elementtree zlib _lzma _bz2 _zstd binascii
+unicodedata _codecs_cn _codecs_hk _codecs_iso2022 _codecs_jp _codecs_kr _codecs_tw _multibytecodec
+_md5 _sha1 _sha2 _sha3 _blake2 _hmac
+_decimal _uuid _zoneinfo _remote_debugging _lsprof syslog _scproxy
+_interpreters _interpchannels _interpqueues
+cmath _statistics _asyncio
+_multiprocessing _posixshmem
+mmap grp resource termios pwd
+
+# Test modules
+xxsubtype _xxtestfuzz _testbuffer _testinternalcapi _testcapi _testlimitedcapi
+_testclinic _testclinic_limited _testimportmultiple _testmultiphase _testsinglephase
+_ctypes_test xxlimited xxlimited_35 xxlimited_3_13

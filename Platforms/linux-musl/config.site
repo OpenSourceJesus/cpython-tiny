@@ -1,0 +1,21 @@
+# Autoconf cache overrides for native musl builds.
+# Source this via CONFIG_SITE when configuring with musl-gcc specs.
+#
+# Configure's feature probes can false-positive when the host linker sees
+# glibc symbols but we compile against musl headers.
+
+ac_cv_func_sem_clockwait=no
+ac_cv_func_close_range=no
+ac_cv_func_closefrom=no
+
+# C23 math functions present in recent glibc but not musl.
+ac_cv_func_acospi=no
+ac_cv_func_asinpi=no
+ac_cv_func_atanpi=no
+ac_cv_func_atan2pi=no
+ac_cv_func_cospi=no
+ac_cv_func_sinpi=no
+ac_cv_func_tanpi=no
+
+# glibc extensions not in musl.
+ac_cv_func_posix_spawn_file_actions_addclosefrom_np=no

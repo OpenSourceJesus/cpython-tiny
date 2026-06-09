@@ -1,0 +1,27 @@
+# Minimal stdlib C extension set for stripped musl static builds.
+# Replaces Modules/Setup.stdlib.in when Tools/build/prune-minimal-source.sh runs.
+#
+# See Tools/build/build-minimal-musl.sh
+
+*@MODULE_BUILDTYPE@*
+
+# Core data / algorithms
+@MODULE_ARRAY_TRUE@array arraymodule.c
+@MODULE__BISECT_TRUE@_bisect _bisectmodule.c
+@MODULE__CSV_TRUE@_csv _csv.c
+@MODULE__HEAPQ_TRUE@_heapq _heapqmodule.c
+@MODULE__JSON_TRUE@_json _json.c
+@MODULE__MATH_INTEGER_TRUE@_math_integer mathintegermodule.c
+@MODULE__PICKLE_TRUE@_pickle _pickle.c
+@MODULE__QUEUE_TRUE@_queue _queuemodule.c
+@MODULE__RANDOM_TRUE@_random _randommodule.c
+@MODULE__STRUCT_TRUE@_struct _struct.c
+
+# libm
+@MODULE_MATH_TRUE@math mathmodule.c
+
+# POSIX I/O
+@MODULE_FCNTL_TRUE@fcntl fcntlmodule.c
+@MODULE_SELECT_TRUE@select selectmodule.c
+@MODULE__SOCKET_TRUE@_socket socketmodule.c
+@MODULE__POSIXSUBPROCESS_TRUE@_posixsubprocess _posixsubprocess.c
